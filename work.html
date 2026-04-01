@@ -45,7 +45,22 @@
     nav{position:fixed;top:0;left:0;width:100%;z-index:1000;background:rgba(10,10,11,0.85);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border-bottom:1px solid var(--line);}
     .nav-wrap{min-height:var(--nav-h);display:flex;align-items:center;justify-content:space-between;gap:20px;}
     .brand{display:flex;align-items:center;gap:13px;z-index:1101;}
-    .brand-mark{width:46px;height:46px;border-radius:14px;display:grid;place-items:center;background:linear-gradient(135deg,#6366f1,#0ea5e9);color:#fff;font-family:"Cormorant Garamond",serif;font-size:1.35rem;font-weight:700;flex-shrink:0;}
+    .brand-mark {
+  width: 80px;
+  height: 80px;
+  border-radius: 14px;
+  display: grid;
+  place-items: center;
+  background: transparent;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.brand-mark img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
     .brand-text{display:flex;flex-direction:column;line-height:1;}
     .brand-name{font-family:"Cormorant Garamond",serif;font-size:clamp(1.1rem,1.6vw,1.6rem);letter-spacing:.07em;text-transform:uppercase;color:var(--text);}
     .brand-sub{margin-top:5px;font-size:.66rem;color:var(--muted);text-transform:uppercase;letter-spacing:.16em;font-weight:700;}
@@ -160,7 +175,9 @@
 <nav>
   <div class="container nav-wrap">
     <a href="index.html" class="brand">
-      <div class="brand-mark">M</div>
+      <div class="brand-mark">
+  <img src="michael-logo.png" alt="Michael Akinmoju Logo">
+</div>
       <div class="brand-text">
         <div class="brand-name">Michael Akinmoju</div>
         <div class="brand-sub">Unlockwithmichael</div>
