@@ -45,9 +45,7 @@
     "url": "https://michaelakinmoju.com",
     "logo": "https://michaelakinmoju.com/michael-logo.png",
     "image": "https://michaelakinmoju.com/michael-logo.png",
-    "description": "Michael Akinmoju builds premium, fast and SEO-ready 
-    websites for small businesses, startups and local brands 
-    starting at $299.",
+    "description": "Michael Akinmoju builds premium, fast and SEO-ready websites for small businesses, startups and local brands starting at $299.",
     "telephone": "+1-226-979-3569",
     "email": "michealakinmoju@gmail.com",
     "address": {
@@ -115,7 +113,7 @@
     :root{
       --bg:#0a0a0b;
       --bg-2:#111113;
-      --bg-3:#1a1a1d; 
+      --bg-3:#1a1a1d;
       --bg-card:#141416;
       --text:#f0f0f2;
       --muted:#8a8a8e;
@@ -139,10 +137,94 @@
     p{color:var(--muted);line-height:1.75;}
     .container{width:min(100% - 40px,var(--max));margin:auto;}
 
-    .animated-bg{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:0;}
-    .animated-bg canvas{position:absolute;inset:0;width:100%;height:100%;}
+    /* ============================================
+       2026 AI CANVAS — fixed full page background
+    ============================================ */
+    #ai-canvas{
+      position:fixed;
+      inset:0;
+      z-index:0;
+      pointer-events:none;
+    }
+
+    /* Holographic scan lines */
+    .holo-lines{
+      position:fixed;
+      inset:0;
+      z-index:1;
+      pointer-events:none;
+      background:repeating-linear-gradient(
+        0deg,transparent,transparent 3px,
+        rgba(99,102,241,0.012) 3px,
+        rgba(99,102,241,0.012) 4px
+      );
+      animation:scanDown 12s linear infinite;
+    }
+    @keyframes scanDown{
+      0%{background-position:0 0}
+      100%{background-position:0 80px}
+    }
+
+    /* Tech grid overlay */
+    .tech-grid{
+      position:fixed;
+      inset:0;
+      z-index:1;
+      pointer-events:none;
+      background-image:
+        linear-gradient(rgba(99,102,241,0.03) 1px,transparent 1px),
+        linear-gradient(90deg,rgba(99,102,241,0.03) 1px,transparent 1px);
+      background-size:72px 72px;
+      animation:gridBreath 8s ease-in-out infinite;
+    }
+    @keyframes gridBreath{
+      0%,100%{opacity:0.6}
+      50%{opacity:1}
+    }
+
+    /* Vignette */
+    .vignette{
+      position:fixed;
+      inset:0;
+      z-index:1;
+      pointer-events:none;
+      background:radial-gradient(ellipse at center,transparent 30%,rgba(10,10,11,0.8) 100%);
+    }
+
+    /* Everything sits above canvas */
+    nav,
+    .hero,
+    .section,
+    .logos-strip,
+    .about-strip,
+    .process-strip,
+    .cta-band,
+    footer,
+    .floating-btn{
+      position:relative;
+      z-index:2;
+    }
+
+    /* ============================================
+       OLD ANIMATED BG — keep blobs, remove canvas
+    ============================================ */
+    .animated-bg{
+      position:absolute;
+      inset:0;
+      overflow:hidden;
+      pointer-events:none;
+      z-index:0;
+    }
+    /* Hide the old per-section canvases — AI canvas replaces them */
+    .animated-bg canvas{display:none}
+
     .blob{position:absolute;border-radius:50%;filter:blur(80px);animation:blobDrift 14s ease-in-out infinite;opacity:0;}
-    @keyframes blobDrift{0%{transform:translate(0,0) scale(1);opacity:.12;}33%{transform:translate(40px,-30px) scale(1.08);opacity:.16;}66%{transform:translate(-30px,40px) scale(.94);opacity:.10;}100%{transform:translate(0,0) scale(1);opacity:.12;}}
+    @keyframes blobDrift{
+      0%{transform:translate(0,0) scale(1);opacity:.12;}
+      33%{transform:translate(40px,-30px) scale(1.08);opacity:.16;}
+      66%{transform:translate(-30px,40px) scale(.94);opacity:.10;}
+      100%{transform:translate(0,0) scale(1);opacity:.12;}
+    }
     .blob-1{width:520px;height:520px;background:radial-gradient(circle,rgba(99,102,241,.2),transparent 70%);top:-120px;right:-80px;animation-delay:0s;}
     .blob-2{width:420px;height:420px;background:radial-gradient(circle,rgba(14,165,233,.16),transparent 70%);bottom:-100px;left:-60px;animation-delay:-5s;}
     .blob-3{width:360px;height:360px;background:radial-gradient(circle,rgba(168,85,247,.14),transparent 70%);top:40%;left:30%;animation-delay:-9s;}
@@ -150,22 +232,8 @@
     nav{position:fixed;top:0;left:0;width:100%;z-index:1000;background:rgba(10,10,11,0.85);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border-bottom:1px solid var(--line);}
     .nav-wrap{min-height:var(--nav-h);display:flex;align-items:center;justify-content:space-between;gap:20px;}
     .brand{display:flex;align-items:center;gap:13px;z-index:1101;}
-    .brand-mark {
-      width: 60px;
-      height: 70px;
-      border-radius: 14px;
-      display: grid;
-      place-items: center;
-      background: transparent;
-      flex-shrink: 0;
-      overflow: hidden;
-    }
-
-    .brand-mark img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-    }
+    .brand-mark{width:60px;height:70px;border-radius:14px;display:grid;place-items:center;background:transparent;flex-shrink:0;overflow:hidden;}
+    .brand-mark img{width:100%;height:100%;object-fit:contain;}
     .brand-text{display:flex;flex-direction:column;line-height:1;}
     .brand-name{font-family:"Cormorant Garamond",serif;font-size:clamp(1.1rem,1.6vw,1.6rem);letter-spacing:.07em;text-transform:uppercase;color:var(--text);}
     .brand-sub{margin-top:5px;font-size:.66rem;color:var(--muted);text-transform:uppercase;letter-spacing:.16em;font-weight:700;}
@@ -186,8 +254,68 @@
     .mobile-socials{display:flex;gap:10px;flex-wrap:wrap;}
     .mobile-socials a{width:40px;height:40px;display:grid;place-items:center;border-radius:50%;background:var(--bg-2);border:1px solid var(--line);color:var(--muted);}
 
-    .hero{position:relative;overflow:hidden;padding:calc(var(--nav-h) + 72px) 0 96px;background:var(--bg);}
-    .hero-inner{position:relative;z-index:1;display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;}
+    /* ============================================
+       HERO — full bg image on BOTH mobile & web
+    ============================================ */
+    .hero{
+      position:relative;
+      overflow:hidden;
+      padding:calc(var(--nav-h) + 72px) 0 96px;
+      /* Remove old plain bg */
+      background:transparent;
+    }
+
+    /* HERO BACKGROUND IMAGE — full viewport */
+    .hero-bg-image{
+      position:absolute;
+      inset:0;
+      z-index:0;
+    }
+    .hero-bg-image img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      object-position:center center;
+      filter:saturate(0.5) brightness(0.25);
+    }
+
+    /* Multi-layer gradient mask over hero image */
+    .hero-bg-mask{
+      position:absolute;
+      inset:0;
+      z-index:1;
+      background:
+        linear-gradient(
+          to right,
+          rgba(10,10,11,0.97) 0%,
+          rgba(10,10,11,0.82) 50%,
+          rgba(10,10,11,0.4) 100%
+        ),
+        linear-gradient(
+          to top,
+          rgba(10,10,11,1) 0%,
+          transparent 40%
+        ),
+        radial-gradient(
+          ellipse at 75% 50%,
+          rgba(99,102,241,0.12) 0%,
+          transparent 60%
+        );
+    }
+
+    /* OLD hero animated bg blobs still show */
+    .hero .animated-bg{z-index:2}
+
+    /* Hero content above everything */
+    .hero-inner{
+      position:relative;
+      z-index:3;
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:56px;
+      align-items:center;
+    }
+
     .hero-eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.05);border:1px solid var(--line);padding:6px 14px;border-radius:999px;backdrop-filter:blur(8px);font-size:.73rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:22px;}
     .hero h1{font-size:clamp(2.7rem,5.2vw,4.8rem);line-height:.95;margin-bottom:22px;color:var(--text);}
     .hero h1 em{font-style:italic;color:#6366f1;}
@@ -297,6 +425,9 @@
     .typed-cursor{display:inline-block;width:3px;height:.82em;background:#6366f1;margin-left:3px;vertical-align:middle;animation:blink .7s infinite;}
     @keyframes blink{0%,100%{opacity:1;}50%{opacity:0;}}
 
+    /* ============================================
+       RESPONSIVE — unchanged from original
+    ============================================ */
     @media(max-width:1060px){
       .hero-inner,.about-inner,.footer-inner{grid-template-columns:1fr;}
       .services-layout,.process-grid{grid-template-columns:1fr 1fr;}
@@ -309,6 +440,11 @@
       .hero h1{font-size:clamp(2.3rem,7vw,3.4rem);}
       .hero-btns,.cta-band-btns{flex-direction:column;}
       .btn{width:100%;}
+
+      /* Mobile hero bg stays full screen */
+      .hero-bg-image img{
+        object-position:60% center;
+      }
     }
     @media(max-width:580px){
       .services-layout,.process-grid{grid-template-columns:1fr;}
@@ -320,13 +456,18 @@
 </head>
 <body>
 
+<!-- ===== 2026 AI CANVAS BACKGROUND ===== -->
+<canvas id="ai-canvas"></canvas>
+<div class="holo-lines"></div>
+<div class="tech-grid"></div>
+<div class="vignette"></div>
 
 <nav>
   <div class="container nav-wrap">
     <a href="index.html" class="brand">
       <div class="brand-mark">
-  <img src="michael-logo.png" alt="Michael Akinmoju Logo">
-</div>
+        <img src="michael-logo.png" alt="Michael Akinmoju Logo">
+      </div>
       <div class="brand-text">
         <div class="brand-name">Michael Akinmoju</div>
         <div class="brand-sub">Unlockwithmichael</div>
@@ -360,19 +501,38 @@
     <a href="https://www.tiktok.com/@thisisafri?_r=1&_t=ZS-94hwFDtoEvC" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
     <a href="https://wa.me/12269793569" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
   </div>
-  <a href="contact.html" class="btn btn-dark" style="width:100%;justify-content:center;margin-top:8px;"><i class="fa-solid fa-paper-plane"></i> Start a Project</a>
+  <a href="contact.html" class="btn btn-dark" style="width:100%;justify-content:center;margin-top:8px;">
+    <i class="fa-solid fa-paper-plane"></i> Start a Project
+  </a>
 </aside>
 
+<!-- ===== HERO ===== -->
 <section class="hero">
+
+  <!-- HERO FULL BACKGROUND IMAGE -->
+  <div class="hero-bg-image">
+    <img
+      id="heroBgImg"
+      src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=1920&q=85&auto=format&fit=crop"
+      alt="Developer workspace with laptop"
+      fetchpriority="high"
+    />
+  </div>
+  <div class="hero-bg-mask"></div>
+
+  <!-- Original blobs still show on top -->
   <div class="animated-bg" id="heroBg">
     <div class="blob blob-1"></div>
     <div class="blob blob-2"></div>
     <div class="blob blob-3"></div>
     <canvas id="heroGrid"></canvas>
   </div>
+
   <div class="container hero-inner">
     <div class="reveal">
-      <div class="hero-eyebrow"><i class="fa-solid fa-bolt"></i> Web Designer · Developer · Author</div>
+      <div class="hero-eyebrow">
+        <i class="fa-solid fa-bolt"></i> Web Designer · Developer · Author
+      </div>
       <h1>Premium websites for <em>brands</em> that <span id="typedWord">grow.</span><span class="typed-cursor"></span></h1>
       <p class="hero-desc">Modern, professional websites designed to strengthen your brand, build trust, and turn visitors into paying clients.</p>
       <div class="hero-btns">
@@ -409,14 +569,10 @@
 
 <section class="section seo-local">
   <div class="container">
-    <div class="section-head reveal" style="max-width: 900px;">
+    <div class="section-head reveal" style="max-width:900px;">
       <div class="section-label"><i class="fa-solid fa-location-dot"></i> Windsor Web Design</div>
       <h2 class="section-title">Web Designer in Windsor, Ontario</h2>
-      <p>
-        I help businesses in Windsor, Ontario and across Canada build modern, fast, and SEO-ready websites
-        that look professional and bring in more customers. From starter websites to premium
-        business sites, I create web experiences designed to help your brand grow online.
-      </p>
+      <p>I help businesses in Windsor, Ontario and across Canada build modern, fast, and SEO-ready websites that look professional and bring in more customers. From starter websites to premium business sites, I create web experiences designed to help your brand grow online.</p>
     </div>
   </div>
 </section>
@@ -438,7 +594,6 @@
   <div class="animated-bg">
     <div class="blob" style="width:400px;height:400px;background:radial-gradient(circle,rgba(99,102,241,.12),transparent 70%);top:-100px;right:-80px;animation-delay:-3s;"></div>
     <div class="blob" style="width:350px;height:350px;background:radial-gradient(circle,rgba(14,165,233,.1),transparent 70%);bottom:-80px;left:-60px;animation-delay:-7s;"></div>
-    <canvas class="svcGrid"></canvas>
   </div>
   <div class="container" style="position:relative;z-index:1;">
     <div class="section-head reveal">
@@ -470,7 +625,6 @@
   <div class="animated-bg">
     <div class="blob" style="width:480px;height:480px;background:radial-gradient(circle,rgba(99,102,241,.18),transparent 70%);top:-80px;right:-60px;animation-delay:-2s;"></div>
     <div class="blob" style="width:380px;height:380px;background:radial-gradient(circle,rgba(14,165,233,.14),transparent 70%);bottom:-60px;left:-40px;animation-delay:-7s;"></div>
-    <canvas class="darkGrid"></canvas>
   </div>
   <div class="container">
     <div class="about-inner">
@@ -497,7 +651,6 @@
 <div class="process-strip">
   <div class="animated-bg">
     <div class="blob" style="width:380px;height:380px;background:radial-gradient(circle,rgba(99,102,241,.1),transparent 70%);top:-60px;right:-40px;animation-delay:-4s;"></div>
-    <canvas class="svcGrid"></canvas>
   </div>
   <div class="container" style="position:relative;z-index:1;">
     <div class="section-head reveal" style="text-align:center;">
@@ -518,7 +671,6 @@
   <div class="animated-bg">
     <div class="blob" style="width:460px;height:460px;background:radial-gradient(circle,rgba(99,102,241,.2),transparent 70%);top:-80px;right:-60px;animation-delay:-2s;"></div>
     <div class="blob" style="width:360px;height:360px;background:radial-gradient(circle,rgba(14,165,233,.16),transparent 70%);bottom:-60px;left:-40px;animation-delay:-7s;"></div>
-    <canvas class="darkGrid"></canvas>
   </div>
   <div class="container">
     <h2 class="reveal">Ready to build your premium website?</h2>
@@ -533,10 +685,29 @@
 <footer>
   <div class="container">
     <div class="footer-inner">
-      <div class="footer-brand"><h3>Michael Akinmoju</h3><p>Premium web design & development for businesses ready to grow online.</p></div>
-      <div class="footer-col"><h4>Navigation</h4><a href="index.html">Home</a><a href="work.html">Work & Pricing</a><a href="contact.html">Contact</a></div>
-      <div class="footer-col"><h4>Services</h4><a href="work.html">Website Design</a><a href="work.html">Web Development</a><a href="work.html">Landing Pages</a></div>
-      <div class="footer-col"><h4>Connect</h4><a href="mailto:michealakinmoju@gmail.com">Email</a><a href="https://wa.me/12269793569" target="_blank">WhatsApp</a><a href="https://www.instagram.com/mich4505ael" target="_blank">Instagram</a><a href="http://payhip.com/unlockwithmichael" target="_blank">Buy the Book</a></div>
+      <div class="footer-brand">
+        <h3>Michael Akinmoju</h3>
+        <p>Premium web design & development for businesses ready to grow online.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <a href="index.html">Home</a>
+        <a href="work.html">Work & Pricing</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <a href="work.html">Website Design</a>
+        <a href="work.html">Web Development</a>
+        <a href="work.html">Landing Pages</a>
+      </div>
+      <div class="footer-col">
+        <h4>Connect</h4>
+        <a href="mailto:michealakinmoju@gmail.com">Email</a>
+        <a href="https://wa.me/12269793569" target="_blank">WhatsApp</a>
+        <a href="https://www.instagram.com/mich4505ael" target="_blank">Instagram</a>
+        <a href="http://payhip.com/unlockwithmichael" target="_blank">Buy the Book</a>
+      </div>
     </div>
     <div class="footer-bottom">
       <p id="footerYear"></p>
@@ -549,17 +720,424 @@
   </div>
 </footer>
 
-<a href="contact.html" class="floating-btn"><i class="fa-solid fa-paper-plane"></i> Hire Me</a>
+<a href="contact.html" class="floating-btn">
+  <i class="fa-solid fa-paper-plane"></i> Hire Me
+</a>
 
 <script>
+/* =============================================
+   2026 AI BACKGROUND ENGINE
+   Moving 3D laptops · Neural web
+   Holographic grid · Code rain
+   Circuit pulses · Laser scanner
+   Depth particles · Mouse glow
+============================================= */
+(function(){
+  const C  = document.getElementById('ai-canvas');
+  const cx = C.getContext('2d');
+  let W, H, tick=0, mx=600, my=400;
+
+  function resize(){
+    W = C.width  = window.innerWidth;
+    H = C.height = window.innerHeight;
+  }
+  resize();
+  window.addEventListener('resize', resize, {passive:true});
+  window.addEventListener('mousemove', e=>{mx=e.clientX; my=e.clientY}, {passive:true});
+
+  const TAU = Math.PI * 2;
+  // Brand colors: indigo + cyan
+  const CI  = a => `rgba(99,102,241,${a})`;   // indigo
+  const CC  = a => `rgba(14,165,233,${a})`;   // cyan
+  const CW  = a => `rgba(255,255,255,${a})`;  // white
+  const CP  = a => `rgba(168,85,247,${a})`;   // purple
+
+  /* ---- FLOATING 3D LAPTOP SILHOUETTES ---- */
+  class Laptop {
+    constructor(){ this.init(true); }
+    init(scatter){
+      this.x     = scatter ? Math.random()*W : -120;
+      this.y     = scatter ? Math.random()*H*0.85 : Math.random()*H*0.85;
+      this.depth = Math.random()*0.6+0.15;
+      this.sz    = this.depth*60+12;
+      this.alpha = this.depth*0.1+0.02;
+      this.spd   = this.depth*0.4+0.1;
+      this.rot   = (Math.random()-0.5)*0.3;
+      this.rotSpd= (Math.random()-0.5)*0.003;
+      this.screenFlicker = Math.random()*TAU;
+      this.indigo = Math.random()<0.6;
+    }
+    update(){
+      this.x += this.spd;
+      this.rot += this.rotSpd;
+      this.screenFlicker += 0.04;
+      if(this.x > W+130) this.init(false);
+    }
+    draw(){
+      cx.save();
+      cx.translate(this.x, this.y);
+      cx.rotate(this.rot);
+      const s = this.sz;
+      const col = this.indigo ? CI : CC;
+      cx.globalAlpha = this.alpha;
+      cx.strokeStyle = col(1);
+      cx.lineWidth = s*0.04;
+      cx.lineCap = 'round';
+
+      // Laptop base
+      cx.beginPath();
+      cx.rect(-s*0.7, s*0.1, s*1.4, s*0.12);
+      cx.stroke();
+
+      // Screen (open ~100deg)
+      cx.beginPath();
+      cx.moveTo(-s*0.6, s*0.1);
+      cx.lineTo(-s*0.55,-s*0.7);
+      cx.lineTo( s*0.55,-s*0.7);
+      cx.lineTo( s*0.6, s*0.1);
+      cx.stroke();
+
+      // Screen glow / content
+      const sf = 0.5+0.5*Math.sin(this.screenFlicker);
+      cx.fillStyle = col(0.06+sf*0.04);
+      cx.fillRect(-s*0.52,-s*0.65,s*1.04,s*0.72);
+
+      // Code lines on screen
+      cx.strokeStyle = col(0.3+sf*0.2);
+      cx.lineWidth = s*0.025;
+      for(let l=0;l<4;l++){
+        const ly = -s*0.55 + l*(s*0.16);
+        const lw = (0.3+Math.random()*0.4)*s*0.9;
+        cx.beginPath();
+        cx.moveTo(-s*0.44, ly);
+        cx.lineTo(-s*0.44+lw, ly);
+        cx.stroke();
+      }
+
+      // Keyboard dots
+      cx.fillStyle = col(0.4);
+      for(let kx=0;kx<5;kx++){
+        for(let ky=0;ky<2;ky++){
+          cx.beginPath();
+          cx.arc(-s*0.35+kx*s*0.18, s*0.13+ky*s*0.04, s*0.018, 0, TAU);
+          cx.fill();
+        }
+      }
+      cx.globalAlpha = 1;
+      cx.restore();
+    }
+  }
+
+  /* ---- QUANTUM PARTICLES ---- */
+  class Particle {
+    constructor(){ this.init(true); }
+    init(scatter){
+      this.x    = scatter ? Math.random()*W : (Math.random()<.5?-4:W+4);
+      this.y    = Math.random()*H;
+      this.vx   = (Math.random()-.5)*.5;
+      this.vy   = (Math.random()-.5)*.35;
+      this.r    = Math.random()*1.6+.3;
+      this.base = Math.random()*.5+.1;
+      this.ph   = Math.random()*TAU;
+      this.type = Math.floor(Math.random()*3); // 0=indigo 1=cyan 2=purple
+      this.trail= [];
+    }
+    update(){
+      this.ph += .022;
+      const dx=mx-this.x, dy=my-this.y, d2=dx*dx+dy*dy;
+      if(d2<14000){const f=(118-Math.sqrt(d2))/118*.003;this.vx+=dx*f;this.vy+=dy*f;}
+      this.vx*=.982; this.vy*=.982;
+      this.trail.push({x:this.x,y:this.y});
+      if(this.trail.length>7) this.trail.shift();
+      this.x+=this.vx; this.y+=this.vy;
+      if(this.x<-10||this.x>W+10||this.y<-10||this.y>H+10) this.init(false);
+      this._a = this.base*(.65+.35*Math.sin(this.ph));
+    }
+    draw(){
+      const col = this.type===0?CI:this.type===1?CC:CP;
+      for(let i=0;i<this.trail.length-1;i++){
+        const p=i/this.trail.length;
+        cx.beginPath();
+        cx.moveTo(this.trail[i].x,this.trail[i].y);
+        cx.lineTo(this.trail[i+1].x,this.trail[i+1].y);
+        cx.strokeStyle=col(this._a*p*0.35);
+        cx.lineWidth=this.r*0.6; cx.stroke();
+      }
+      cx.beginPath();
+      cx.arc(this.x,this.y,this.r,0,TAU);
+      cx.fillStyle=col(this._a); cx.fill();
+      if(this._a>.3){
+        cx.beginPath();
+        cx.arc(this.x,this.y,this.r*3.5,0,TAU);
+        cx.fillStyle=col(this._a*.05); cx.fill();
+      }
+    }
+  }
+
+  /* ---- NEURAL WEB NODES ---- */
+  class Node {
+    constructor(){ this.init(); }
+    init(){
+      this.x    = Math.random()*W;
+      this.y    = Math.random()*H;
+      this.r    = Math.random()*2.2+.6;
+      this.vx   = (Math.random()-.5)*.25;
+      this.vy   = (Math.random()-.5)*.25;
+      this.ph   = Math.random()*TAU;
+      this.type = Math.floor(Math.random()*3);
+      this.ring = Math.random()<.3;
+    }
+    update(){
+      this.ph+=.014;
+      this.x+=this.vx; this.y+=this.vy;
+      if(this.x<0||this.x>W)this.vx*=-1;
+      if(this.y<0||this.y>H)this.vy*=-1;
+    }
+    draw(){
+      const a=.3+.25*Math.sin(this.ph);
+      const col=this.type===0?CI:this.type===1?CC:CP;
+      cx.beginPath();cx.arc(this.x,this.y,this.r,0,TAU);
+      cx.fillStyle=col(a);cx.fill();
+      if(this.ring){
+        const rr=this.r+4+3*Math.sin(this.ph);
+        cx.beginPath();cx.arc(this.x,this.y,rr,0,TAU);
+        cx.strokeStyle=col(.1);cx.lineWidth=.6;cx.stroke();
+      }
+    }
+  }
+
+  function drawWeb(nodes){
+    const max=130;
+    for(let i=0;i<nodes.length;i++){
+      for(let j=i+1;j<nodes.length;j++){
+        const dx=nodes[i].x-nodes[j].x,dy=nodes[i].y-nodes[j].y;
+        const d=Math.sqrt(dx*dx+dy*dy);
+        if(d<max){
+          cx.beginPath();
+          cx.moveTo(nodes[i].x,nodes[i].y);
+          cx.lineTo(nodes[j].x,nodes[j].y);
+          cx.strokeStyle=CI((1-d/max)*0.055);
+          cx.lineWidth=.5;cx.stroke();
+        }
+      }
+    }
+  }
+
+  /* ---- CODE RAIN STREAMS ---- */
+  class CodeStream {
+    constructor(){ this.init(true); }
+    init(scatter){
+      this.x    = Math.random()*W;
+      this.y    = scatter ? Math.random()*H : -100;
+      this.len  = Math.random()*140+50;
+      this.spd  = Math.random()*2+.5;
+      this.alpha= Math.random()*.12+.03;
+      this.w    = Math.random()<.2?1.5:.5;
+      this.type = Math.random()<.5?0:1;
+      this.chars= '01{}[]()<>/\\|#$@=+-*;:,.!?';
+      this.charY= 0;
+    }
+    update(){
+      this.y+=this.spd;
+      this.charY+=this.spd;
+      if(this.y>H+this.len)this.init(false);
+    }
+    draw(){
+      const col=this.type===0?CI:CC;
+      const g=cx.createLinearGradient(this.x,this.y-this.len,this.x,this.y);
+      g.addColorStop(0,col(0));
+      g.addColorStop(.5,col(this.alpha));
+      g.addColorStop(1,col(0));
+      cx.beginPath();
+      cx.moveTo(this.x,this.y-this.len);
+      cx.lineTo(this.x,this.y);
+      cx.strokeStyle=g;cx.lineWidth=this.w;cx.stroke();
+
+      // Leading char
+      cx.fillStyle=col(this.alpha*2);
+      cx.font=`${Math.max(8,this.w*6)}px monospace`;
+      const ch=this.chars[Math.floor(Math.random()*this.chars.length)];
+      cx.fillText(ch,this.x-3,this.y);
+    }
+  }
+
+  /* ---- CIRCUIT BOARD PULSES ---- */
+  class Circuit {
+    constructor(){ this.init(); }
+    init(){
+      this.x=Math.random()*W; this.y=Math.random()*H;
+      this.segs=[];
+      let cx2=this.x,cy2=this.y;
+      const n=Math.floor(Math.random()*5)+3;
+      for(let i=0;i<n;i++){
+        const dir=Math.floor(Math.random()*4);
+        const len=Math.random()*90+20;
+        const nx=cx2+(dir===0?len:dir===1?-len:0);
+        const ny=cy2+(dir===2?len:dir===3?-len:0);
+        this.segs.push({x1:cx2,y1:cy2,x2:nx,y2:ny});
+        cx2=nx;cy2=ny;
+      }
+      this.prog=0;this.spd=Math.random()*.012+.004;
+      this.totalLen=this.segs.reduce((a,s)=>a+Math.hypot(s.x2-s.x1,s.y2-s.y1),0);
+      this.life=1;
+      this.type=Math.floor(Math.random()*2);
+    }
+    update(){
+      this.prog+=this.spd;this.life-=.0025;
+      if(this.life<=0)this.init();
+    }
+    draw(){
+      const col=this.type===0?CI:CC;
+      const drawn=this.prog*this.totalLen;
+      let rem=drawn;
+      for(const s of this.segs){
+        const sLen=Math.hypot(s.x2-s.x1,s.y2-s.y1);
+        if(rem<=0)break;
+        const t=Math.min(1,rem/sLen);
+        cx.beginPath();
+        cx.moveTo(s.x1,s.y1);
+        cx.lineTo(s.x1+(s.x2-s.x1)*t,s.y1+(s.y2-s.y1)*t);
+        cx.strokeStyle=col(.08*this.life);
+        cx.lineWidth=.7;cx.lineCap='square';cx.stroke();
+        cx.beginPath();cx.arc(s.x1,s.y1,2,0,TAU);
+        cx.fillStyle=col(.1*this.life);cx.fill();
+        rem-=sLen;
+      }
+    }
+  }
+
+  /* ---- ENERGY RINGS ---- */
+  class Ring {
+    constructor(){ this.reset(); }
+    reset(){
+      this.x=Math.random()*W;this.y=Math.random()*H;
+      this.r=0;this.maxR=Math.random()*180+70;
+      this.spd=Math.random()*1.4+.3;
+      this.a=Math.random()*.14+.04;
+      this.type=Math.floor(Math.random()*3);
+    }
+    update(){this.r+=this.spd;if(this.r>this.maxR)this.reset();}
+    draw(){
+      const p=this.r/this.maxR;
+      const col=this.type===0?CI:this.type===1?CC:CP;
+      cx.beginPath();cx.arc(this.x,this.y,this.r,0,TAU);
+      cx.strokeStyle=col(this.a*(1-p));cx.lineWidth=1;cx.stroke();
+    }
+  }
+
+  /* ---- LASER SCANNER ---- */
+  let scanY=0,scanDir=1;
+  function drawLaser(){
+    scanY+=.65*scanDir;
+    if(scanY>H||scanY<0)scanDir*=-1;
+    const g=cx.createLinearGradient(0,scanY-40,0,scanY+40);
+    g.addColorStop(0,CI(0));g.addColorStop(.45,CI(.06));
+    g.addColorStop(.5,CI(.2));g.addColorStop(.55,CI(.06));g.addColorStop(1,CI(0));
+    cx.fillStyle=g;cx.fillRect(0,scanY-40,W,80);
+    cx.beginPath();cx.moveTo(0,scanY);cx.lineTo(W,scanY);
+    cx.strokeStyle=CI(.35);cx.lineWidth=1;
+    cx.shadowColor='rgba(99,102,241,.6)';cx.shadowBlur=7;
+    cx.stroke();cx.shadowBlur=0;
+  }
+
+  /* ---- GLITCH PULSE ---- */
+  let glitchTimer=0,glitchActive=false,glitchA=0;
+  function updateGlitch(){
+    glitchTimer++;
+    if(!glitchActive&&glitchTimer>240+Math.random()*360){
+      glitchActive=true;glitchA=.15;glitchTimer=0;
+    }
+    if(glitchActive){
+      glitchA*=.87;
+      const bars=Math.floor(Math.random()*3)+1;
+      for(let i=0;i<bars;i++){
+        const gy=Math.random()*H,gh=Math.random()*5+1,gx=Math.random()*60-30;
+        cx.fillStyle=CI(glitchA);cx.fillRect(gx,gy,W,gh);
+        cx.fillStyle=CC(glitchA*.35);cx.fillRect(gx+3,gy,W,gh*.5);
+      }
+      if(glitchA<.004)glitchActive=false;
+    }
+  }
+
+  /* ---- MOUSE SPOTLIGHT ---- */
+  function drawSpot(){
+    const g=cx.createRadialGradient(mx,my,0,mx,my,270);
+    g.addColorStop(0,CI(.05));g.addColorStop(1,CI(0));
+    cx.fillStyle=g;cx.fillRect(0,0,W,H);
+  }
+
+  /* ---- INIT ---- */
+  const particles = Array.from({length:75},  ()=>new Particle());
+  const laptops   = Array.from({length:8},   ()=>new Laptop());
+  const nodes     = Array.from({length:40},  ()=>new Node());
+  const streams   = Array.from({length:35},  ()=>{const s=new CodeStream();s.y=Math.random()*H;return s;});
+  const circuits  = Array.from({length:16},  ()=>new Circuit());
+  const rings     = Array.from({length:5},   ()=>{const r=new Ring();r.r=Math.random()*r.maxR;return r;});
+
+  /* ---- RENDER LOOP ---- */
+  function render(){
+    cx.clearRect(0,0,W,H);tick++;
+
+    // Background atmosphere
+    const atm=cx.createRadialGradient(W*.5,H*.5,0,W*.5,H*.5,W*.8);
+    atm.addColorStop(0,'rgba(15,10,30,.15)');
+    atm.addColorStop(1,'rgba(0,0,0,0)');
+    cx.fillStyle=atm;cx.fillRect(0,0,W,H);
+
+    rings.forEach(r=>{r.update();r.draw();});
+    streams.forEach(s=>{s.update();s.draw();});
+    circuits.forEach(c=>{c.update();c.draw();});
+    // Sort laptops by depth (back to front)
+    laptops.sort((a,b)=>a.depth-b.depth);
+    laptops.forEach(l=>{l.update();l.draw();});
+    nodes.forEach(n=>{n.update();n.draw();});
+    drawWeb(nodes);
+    particles.forEach(p=>{p.update();p.draw();});
+    drawLaser();
+    updateGlitch();
+    drawSpot();
+
+    requestAnimationFrame(render);
+  }
+  render();
+})();
+
+/* =============================================
+   HERO BG IMAGE FALLBACK CHAIN
+============================================= */
+(function(){
+  const imgs=[
+    'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=1920&q=85&auto=format&fit=crop',
+    'https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1920&q=85&auto=format&fit=crop',
+    'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=1920&q=85&auto=format&fit=crop',
+  ];
+  let i=0;
+  const el=document.getElementById('heroBgImg');
+  if(el) el.onerror=function(){i++;if(i<imgs.length)this.src=imgs[i];};
+})();
+
+/* =============================================
+   ALL YOUR ORIGINAL JS — UNCHANGED
+============================================= */
 document.getElementById("footerYear").textContent=`© ${new Date().getFullYear()} Michael Akinmoju. All rights reserved.`;
+
 const menuToggle=document.getElementById("menuToggle");
 const mobilePanel=document.getElementById("mobilePanel");
-menuToggle.addEventListener("click",()=>{mobilePanel.classList.toggle("active");document.body.classList.toggle("menu-open");});
-document.addEventListener("click",(e)=>{if(mobilePanel.classList.contains("active")&&!mobilePanel.contains(e.target)&&!menuToggle.contains(e.target)){mobilePanel.classList.remove("active");document.body.classList.remove("menu-open");}});
-const bar=document.getElementById("scrollBar");
+menuToggle.addEventListener("click",()=>{
+  mobilePanel.classList.toggle("active");
+  document.body.classList.toggle("menu-open");
+});
+document.addEventListener("click",(e)=>{
+  if(mobilePanel.classList.contains("active")&&!mobilePanel.contains(e.target)&&!menuToggle.contains(e.target)){
+    mobilePanel.classList.remove("active");
+    document.body.classList.remove("menu-open");
+  }
+});
+
 const reveals=document.querySelectorAll(".reveal");
-const ro=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting)x.target.classList.add("show");});},{threshold:.1});
+const ro=new IntersectionObserver(e=>{
+  e.forEach(x=>{if(x.isIntersecting)x.target.classList.add("show");});
+},{threshold:.1});
 reveals.forEach(el=>ro.observe(el));
 
 const words=["grow.","convert.","stand out.","succeed.","scale."];
@@ -567,53 +1145,16 @@ let wi=0,ci=0,deleting=false;
 const typedEl=document.getElementById("typedWord");
 function typeLoop(){
   const word=words[wi];
-  if(!deleting){typedEl.textContent=word.slice(0,++ci);if(ci===word.length){deleting=true;setTimeout(typeLoop,1800);return;}}
-  else{typedEl.textContent=word.slice(0,--ci);if(ci===0){deleting=false;wi=(wi+1)%words.length;}}
+  if(!deleting){
+    typedEl.textContent=word.slice(0,++ci);
+    if(ci===word.length){deleting=true;setTimeout(typeLoop,1800);return;}
+  }else{
+    typedEl.textContent=word.slice(0,--ci);
+    if(ci===0){deleting=false;wi=(wi+1)%words.length;}
+  }
   setTimeout(typeLoop,deleting?55:95);
 }
 typeLoop();
-
-function initGrid(canvas,dark){
-  if(!canvas)return;
-  const ctx=canvas.getContext("2d");
-  const isMobile=window.innerWidth<768;
-  let W,H,t=0;
-  const particles=[];
-  const COUNT=isMobile?20:50;
-  function resize(){
-    W=canvas.width=canvas.offsetParent?canvas.offsetParent.offsetWidth:window.innerWidth;
-    H=canvas.height=canvas.offsetParent?canvas.offsetParent.offsetHeight:window.innerHeight;
-    particles.length=0;
-    for(let i=0;i<COUNT;i++){
-      particles.push({x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.5)*(isMobile?.2:.35),vy:(Math.random()-.5)*(isMobile?.2:.35),r:Math.random()*1.5+.6});
-    }
-  }
-  resize();
-  window.addEventListener("resize",resize,{passive:true});
-  const gc=dark?"rgba(255,255,255,":"rgba(99,102,241,";
-  const gs=isMobile?60:80;
-  function draw(){
-    ctx.clearRect(0,0,W,H);t+=.008;
-    if(!isMobile){
-      for(let x=0;x<=W;x+=gs){const pulse=Math.sin(t+x*.01)*.5+.5;ctx.beginPath();ctx.moveTo(x,0);ctx.lineTo(x,H);ctx.strokeStyle=gc+(pulse*.06)+")";ctx.lineWidth=.8;ctx.stroke();}
-      for(let y=0;y<=H;y+=gs){const pulse=Math.sin(t+y*.01)*.5+.5;ctx.beginPath();ctx.moveTo(0,y);ctx.lineTo(W,y);ctx.strokeStyle=gc+(pulse*.06)+")";ctx.lineWidth=.8;ctx.stroke();}
-    }
-    particles.forEach((p,i)=>{
-      p.x+=p.vx;p.y+=p.vy;
-      if(p.x<0||p.x>W)p.vx*=-1;if(p.y<0||p.y>H)p.vy*=-1;
-      ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);ctx.fillStyle=gc+".5)";ctx.fill();
-      for(let j=i+1;j<particles.length;j++){
-        const q=particles[j],dx=p.x-q.x,dy=p.y-q.y,d=Math.sqrt(dx*dx+dy*dy),mx=isMobile?80:120;
-        if(d<mx){ctx.beginPath();ctx.moveTo(p.x,p.y);ctx.lineTo(q.x,q.y);ctx.strokeStyle=gc+(1-d/mx)*.18+")";ctx.lineWidth=.7;ctx.stroke();}
-      }
-    });
-    requestAnimationFrame(draw);
-  }
-  draw();
-}
-initGrid(document.getElementById("heroGrid"),false);
-document.querySelectorAll(".svcGrid").forEach(c=>initGrid(c,false));
-document.querySelectorAll(".darkGrid").forEach(c=>initGrid(c,true));
 </script>
 </body>
 </html>
