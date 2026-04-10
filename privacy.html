@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="canonical" href="https://michaelakinmoju.com/privacy.html"/>
+
+  <title>Privacy Policy | Michael Akinmoju | UnlockWithMichael</title>
+  <meta name="description" content="Privacy Policy for michaelakinmoju.com — how we collect, use and protect your personal information."/>
+  <meta name="author" content="Michael Akinmoju"/>
+  <meta name="robots" content="index, follow"/>
+
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9464737251646149"
+     crossorigin="anonymous"></script>
+
+  <link rel="icon" type="image/png" href="favicon.png"/>
+  <link rel="apple-touch-icon" href="favicon.png"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Cormorant+Garamond:wght@600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
+  <style>
+    :root{
+      --bg:#0a0a0b;
+      --bg-2:#111113;
+      --bg-3:#1a1a1d;
+      --bg-card:#141416;
+      --text:#f0f0f2;
+      --muted:#8a8a8e;
+      --line:rgba(255,255,255,0.07);
+      --line-strong:rgba(255,255,255,0.13);
+      --accent:#6366f1;
+      --accent2:#0ea5e9;
+      --shadow:0 18px 40px rgba(0,0,0,0.3);
+      --shadow-strong:0 24px 46px rgba(0,0,0,0.5);
+      --radius:20px;
+      --max:1180px;
+      --nav-h:80px;
+    }
+    *{box-sizing:border-box;margin:0;padding:0;}
+    html{scroll-behavior:smooth;}
+    body{font-family:"Outfit",sans-serif;background:var(--bg);color:var(--text);overflow-x:hidden;}
+    body.menu-open{overflow:hidden;}
+    img{max-width:100%;display:block;}
+    a{color:inherit;text-decoration:none;}
+    h1,h2,h3,h4{font-family:"Cormorant Garamond",serif;line-height:1.05;}
+    p{color:var(--muted);line-height:1.75;}
+    .container{width:min(100% - 40px,var(--max));margin:auto;}
+
+    .animated-bg{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:0;}
+    .animated-bg canvas{position:absolute;inset:0;width:100%;height:100%;}
+    .blob{position:absolute;border-radius:50%;filter:blur(80px);animation:blobDrift 14s ease-in-out infinite;opacity:0;}
+    @keyframes blobDrift{0%{transform:translate(0,0) scale(1);opacity:.12;}33%{transform:translate(40px,-30px) scale(1.08);opacity:.16;}66%{transform:translate(-30px,40px) scale(.94);opacity:.10;}100%{transform:translate(0,0) scale(1);opacity:.12;}}
+
+    nav{position:fixed;top:0;left:0;width:100%;z-index:1000;background:rgba(10,10,11,0.85);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border-bottom:1px solid var(--line);}
+    .nav-wrap{min-height:var(--nav-h);display:flex;align-items:center;justify-content:space-between;gap:20px;}
+    .brand{display:flex;align-items:center;gap:13px;z-index:1101;}
+    .brand-mark{width:60px;height:70px;border-radius:14px;display:grid;place-items:center;background:transparent;flex-shrink:0;overflow:hidden;}
+    .brand-mark img{width:100%;height:100%;object-fit:contain;}
+    .brand-text{display:flex;flex-direction:column;line-height:1;}
+    .brand-name{font-family:"Cormorant Garamond",serif;font-size:clamp(1.1rem,1.6vw,1.6rem);letter-spacing:.07em;text-transform:uppercase;color:var(--text);}
+    .brand-sub{margin-top:5px;font-size:.66rem;color:var(--muted);text-transform:uppercase;letter-spacing:.16em;font-weight:700;}
+    .nav-center{display:flex;gap:4px;}
+    .nav-center a{font-weight:700;font-size:.88rem;color:var(--muted);padding:8px 15px;border-radius:999px;transition:.18s ease;}
+    .nav-center a:hover,.nav-center a.active{background:var(--bg-3);color:var(--text);}
+    .nav-right{display:flex;align-items:center;gap:10px;}
+    .nav-socials{display:flex;gap:8px;}
+    .nav-socials a{width:36px;height:36px;display:grid;place-items:center;border-radius:50%;background:var(--bg-2);border:1px solid var(--line);transition:.18s ease;font-size:.88rem;color:var(--muted);}
+    .nav-socials a:hover{background:var(--bg-3);color:var(--text);}
+    .nav-cta{display:inline-flex;align-items:center;gap:8px;padding:10px 18px;border-radius:999px;font-weight:800;font-size:.86rem;background:linear-gradient(135deg,#6366f1,#0ea5e9);color:#fff;transition:.18s ease;}
+    .nav-cta:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(99,102,241,.3);}
+    .menu-toggle{display:none;width:42px;height:42px;border:none;border-radius:11px;background:var(--bg-2);border:1px solid var(--line);color:var(--text);cursor:pointer;z-index:1101;place-items:center;}
+    .mobile-panel{display:none;position:fixed;top:0;right:-100%;width:min(86vw,340px);height:100vh;background:var(--bg);border-left:1px solid var(--line);z-index:1100;padding:90px 24px 30px;flex-direction:column;gap:22px;box-shadow:-8px 0 28px rgba(0,0,0,.3);transition:right .28s ease;overflow-y:auto;}
+    .mobile-panel.active{right:0;}
+    .mobile-links{display:flex;flex-direction:column;}
+    .mobile-links a{font-weight:800;font-size:1rem;color:var(--text);padding:14px 0;border-bottom:1px solid var(--line);}
+    .mobile-socials{display:flex;gap:10px;flex-wrap:wrap;}
+    .mobile-socials a{width:40px;height:40px;display:grid;place-items:center;border-radius:50%;background:var(--bg-2);border:1px solid var(--line);color:var(--muted);}
+
+    .section-label{display:inline-flex;align-items:center;gap:7px;background:rgba(255,255,255,.05);border:1px solid var(--line);padding:5px 13px;border-radius:999px;font-size:.7rem;font-weight:800;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);margin-bottom:16px;}
+
+    .page-hero{position:relative;overflow:hidden;padding:calc(var(--nav-h) + 64px) 0 64px;background:var(--bg);border-bottom:1px solid var(--line);text-align:center;}
+    .page-hero .container{position:relative;z-index:1;}
+    .page-hero h1{font-size:clamp(2.3rem,5vw,3.8rem);color:var(--text);margin-bottom:16px;}
+    .page-hero p{font-size:1rem;max-width:500px;margin:0 auto;}
+
+    .policy-section{padding:84px 0;position:relative;overflow:hidden;}
+    .policy-wrap{max-width:780px;margin:0 auto;position:relative;z-index:1;}
+    .policy-card{background:var(--bg-card);border:1px solid var(--line);border-radius:var(--radius);padding:40px;box-shadow:var(--shadow);margin-bottom:16px;position:relative;overflow:hidden;}
+    .policy-card::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#6366f1,#0ea5e9);}
+    .policy-card h2{font-size:1.6rem;color:var(--text);margin-bottom:14px;display:flex;align-items:center;gap:12px;}
+    .policy-card h2 i{font-size:1rem;color:#6366f1;}
+    .policy-card p{font-size:.92rem;margin-bottom:12px;}
+    .policy-card p:last-child{margin-bottom:0;}
+    .policy-card ul{list-style:none;display:flex;flex-direction:column;gap:8px;margin-top:10px;}
+    .policy-card ul li{display:flex;align-items:flex-start;gap:10px;font-size:.9rem;color:var(--muted);line-height:1.6;}
+    .policy-card ul li i{color:#6366f1;font-size:.75rem;flex-shrink:0;margin-top:5px;}
+    .policy-card a{color:#6366f1;font-weight:700;}
+    .policy-card a:hover{text-decoration:underline;}
+    .policy-date{text-align:center;font-size:.8rem;color:var(--muted);margin-bottom:40px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;}
+
+    footer{background:var(--bg-2);border-top:1px solid var(--line);padding:52px 0 32px;}
+    .footer-inner{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:36px;margin-bottom:44px;}
+    .footer-brand h3{font-size:1.45rem;margin-bottom:10px;color:var(--text);}
+    .footer-brand p{font-size:.86rem;max-width:230px;}
+    .footer-col h4{font-size:.74rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:14px;}
+    .footer-col a{display:block;font-size:.88rem;color:var(--muted);margin-bottom:10px;transition:.14s;}
+    .footer-col a:hover{color:var(--text);}
+    .footer-bottom{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;border-top:1px solid var(--line);padding-top:22px;}
+    .footer-bottom p{font-size:.8rem;color:var(--muted);}
+    .footer-socials{display:flex;gap:9px;}
+    .footer-socials a{width:34px;height:34px;display:grid;place-items:center;border-radius:50%;background:var(--bg-3);border:1px solid var(--line);font-size:.8rem;transition:.14s;color:var(--muted);}
+    .footer-socials a:hover{background:rgba(99,102,241,.15);color:#6366f1;}
+    .floating-btn{position:fixed;right:20px;bottom:20px;z-index:999;display:inline-flex;align-items:center;gap:9px;padding:13px 20px;border-radius:999px;background:linear-gradient(135deg,#6366f1,#0ea5e9);color:#fff;font-weight:800;font-size:.86rem;box-shadow:0 12px 28px rgba(99,102,241,.4);transition:.18s ease;font-family:"Outfit",sans-serif;}
+    .floating-btn:hover{transform:translateY(-2px);box-shadow:0 16px 32px rgba(99,102,241,.5);}
+    .reveal{opacity:0;transform:translateY(22px);transition:opacity .65s ease,transform .65s ease;}
+    .reveal.show{opacity:1;transform:translateY(0);}
+
+    @media(max-width:860px){.nav-center,.nav-right .nav-socials,.nav-cta{display:none;}.menu-toggle{display:grid;}.mobile-panel{display:flex;}}
+    @media(max-width:580px){.policy-card{padding:24px;}.footer-inner{grid-template-columns:1fr 1fr;}}
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="container nav-wrap">
+    <a href="index.html" class="brand">
+      <div class="brand-mark">
+        <img src="michael-logo.png" alt="Michael Akinmoju Logo">
+      </div>
+      <div class="brand-text">
+        <div class="brand-name">Michael Akinmoju</div>
+        <div class="brand-sub">Unlockwithmichael</div>
+      </div>
+    </a>
+    <div class="nav-center">
+      <a href="index.html">Home</a>
+      <a href="work.html">Work & Pricing</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="nav-right">
+      <div class="nav-socials">
+        <a href="https://www.instagram.com/mich4505ael?igsh=Mnp3cWZibmo3cHk%3D&utm_source=qr" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://www.tiktok.com/@thisisafri?_r=1&_t=ZS-94hwFDtoEvC" target="_blank" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+        <a href="https://wa.me/12269793569" target="_blank" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+      </div>
+      <a href="contact.html" class="nav-cta"><i class="fa-solid fa-paper-plane"></i> Start a Project</a>
+    </div>
+    <button class="menu-toggle" id="menuToggle" aria-label="Menu"><i class="fa-solid fa-bars"></i></button>
+  </div>
+</nav>
+
+<aside class="mobile-panel" id="mobilePanel">
+  <div class="mobile-links">
+    <a href="index.html">Home</a>
+    <a href="work.html">Work & Pricing</a>
+    <a href="contact.html">Contact</a>
+  </div>
+  <div class="mobile-socials">
+    <a href="https://www.instagram.com/mich4505ael" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+    <a href="https://www.tiktok.com/@thisisafri" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
+    <a href="https://wa.me/12269793569" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+  </div>
+  <a href="contact.html" class="btn" style="display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:13px 22px;border-radius:999px;font-weight:800;background:var(--text);color:var(--bg);width:100%;margin-top:8px;font-family:'Outfit',sans-serif;"><i class="fa-solid fa-paper-plane"></i> Start a Project</a>
+</aside>
+
+<div class="page-hero">
+  <div class="animated-bg">
+    <div class="blob" style="width:480px;height:480px;background:radial-gradient(circle,rgba(99,102,241,.18),transparent 70%);top:-100px;right:-80px;animation-delay:0s;"></div>
+    <div class="blob" style="width:380px;height:380px;background:radial-gradient(circle,rgba(14,165,233,.14),transparent 70%);bottom:-80px;left:-60px;animation-delay:-5s;"></div>
+    <canvas id="phGrid"></canvas>
+  </div>
+  <div class="container">
+    <div class="section-label reveal"><i class="fa-solid fa-shield-halved"></i> Legal</div>
+    <h1 class="reveal">Privacy Policy</h1>
+    <p class="reveal">How we collect, use and protect your information on michaelakinmoju.com.</p>
+  </div>
+</div>
+
+<section class="policy-section">
+  <div class="animated-bg">
+    <div class="blob" style="width:400px;height:400px;background:radial-gradient(circle,rgba(99,102,241,.08),transparent 70%);top:-60px;right:-40px;animation-delay:-3s;"></div>
+  </div>
+  <div class="container">
+    <div class="policy-wrap">
+
+      <p class="policy-date reveal">Last updated: April 10, 2026</p>
+
+      <div class="policy-card reveal">
+        <h2><i class="fa-solid fa-circle-info"></i> Overview</h2>
+        <p>This Privacy Policy explains how Michael Akinmoju ("I", "me", or "my") operating under the brand UnlockWithMichael, collects, uses and protects information gathered through michaelakinmoju.com (the "Site").</p>
+        <p>By using this Site, you agree to the collection and use of information in accordance with this policy. I take your privacy seriously and am committed to protecting your personal information.</p>
+      </div>
+
+      <div class="policy-card reveal">
+        <h2><i class="fa-solid fa-database"></i> Information I Collect</h2>
+        <p>I collect the following types of information when you visit or interact with the Site:</p>
+        <ul>
+          <li><i class="fa-solid fa-check"></i> <strong style="color:var(--text);">Contact information</strong> — your name, email address, phone number and project details when you submit the contact form</li>
+          <li><i class="fa-solid fa-check"></i> <strong style="color:var(--text);">Usage data</strong> — pages visited, time spent on pages, browser type and device information collected automatically via Google Analytics and Google AdSense</li>
+          <li><i class="fa-solid fa-check"></i> <strong style="color:var(--text);">Cookies</strong> — small files stored on your device by Google AdSense and Analytics to personalise ads and measure site performance</li>
+          <li><i class="fa-solid fa-check"></i> <strong style="color:var(--text);">IP address</strong> — collected automatically when you visit the Site for security and analytics purposes</li>
+        </ul>
+      </div>
+
+      <div class="policy-card reveal">
+        <h2><i class="fa-solid fa-gears"></i> How I Use Your Information</h2>
+        <p>Information collected is used for the following purposes:</p>
+        <ul>
+          <li><i class="fa-solid fa-check"></i> To respond to your enquiries and project requests submitted via the contact form</li>
+          <li><i class="fa-solid fa-check"></i> To improve the Site's content, design and user experience</li>
+          <li><i class="fa-solid fa-check"></i> To display relevant advertisements through Google AdSense</li>
+          <li><i class="fa-solid fa-check"></i> To analyse Site traffic and usage patterns via Google Analytics</li>
+          <li><i class="fa-solid fa-check"></i> To comply with legal obligations where required</li>
+        </ul>
+        <p>I do not sell, trade or rent your personal information to third parties.</p>
+      </div>
+
+      <div class="policy-card reveal">
+        <h2><i class="fa-brands fa-google"></i> Google AdSense & Analytics</h2>
+        <p>This Site uses Google AdSense to display advertisements and Google Analytics to understand how visitors use the Site. These services may use cookies and collect data about your browsing behaviour.</p>
+        <p>Google may use the information collected to personalise ads shown to you on this and other websites. You can opt out of personalised advertising by visiting <a href="https://www.google.com/settings/ads" target="_blank">Google Ads Settings</a>.</p>
+        <p>For more information on how Google handles your data, please visit the <a href="https://policies.google.com/privacy" target="_blank">Google Privacy Policy</a>.</p>
+      </div>
+
+      <div class="policy-card reveal">
+        <h2><i class="fa-solid fa-cookie-bite"></i> Cookies</h2>
+        <p>This Site uses cookies — small text files stored on your device — to improve your experience and serve relevant advertisements. Cookies used on this Site include:</p>
+        <ul>
+          <li><i class="fa-solid fa-check"></i> <strong style="color:var(--text);">Google AdSense cookies</strong> — used to serve personalised ads based on your interests</li>
+          <li><i class="fa-solid fa-check"></i> <strong style="color:var(--text);">Google Analytics cookies</strong> — used to track Site usage and visitor behaviour anonymously</li>
+        </ul>
+        <p>You can control or disable cookies through your browser settings. Note that disabling cookies may affect the functionality of some parts of the Site.</p>
+      </div>
+
+      <div class="policy-card reveal">
+        <h2><i class="fa-solid fa-share-nodes"></i> Third Party Services</h2>
+        <p>This Site uses the following third party services that may collect information about you:</p>
+        <ul>
+          <li><i class="fa-solid fa-check"></i> <strong style="color:var(--text);">EmailJS</strong> — used to send contact form submissions to my email inbox. Your form data is transmitted securely through EmailJS servers.</li>
+          <li><i class="fa-solid fa-check"></i> <strong style="color:var(--text);">Google AdSense</strong> — advertising platform that displays ads on the Site</li>
+          <li><i class="fa-solid fa-check"></i> <strong style="color:var(--text);">Google Analytics</strong> — website analytics service</li>
+          <li><i class="fa-solid fa-check"></i> <strong style="color:var(--text);">Google Fonts</strong> — font delivery service that may log requests</li>
+          <li><i class="fa-solid fa-check"></i> <strong style="color:var(--text);">Font Awesome</strong> — icon library delivered via CDN</li>
+        </ul>
+      </div>
+
+      <div class="policy-card reveal">
+        <h2><i class="fa-solid fa-lock"></i> Data Security</h2>
+        <p>I take reasonable measures to protect your personal information from unauthorised access, alteration or disclosure. Contact form submissions are transmitted securely via EmailJS and are only accessible to me.</p>
+        <p>However, no method of transmission over the internet is 100% secure. While I strive to protect your information, I cannot guarantee absolute security.</p>
+      </div>
+
+      <div class="policy-card reveal">
+        <h2><i class="fa-solid fa-child"></i> Children's Privacy</h2>
+        <p>This Site is not directed at children under the age of 13. I do not knowingly collect personal information from children under 13. If you believe a child has provided personal information through this Site, please contact me and I will delete it promptly.</p>
+      </div>
+
+      <div class="policy-card reveal">
+        <h2><i class="fa-solid fa-flag-canada"></i> Your Rights (Canada — PIPEDA)</h2>
+        <p>As a Canadian resident, under the Personal Information Protection and Electronic Documents Act (PIPEDA), you have the right to:</p>
+        <ul>
+          <li><i class="fa-solid fa-check"></i> Access the personal information I hold about you</li>
+          <li><i class="fa-solid fa-check"></i> Request correction of inaccurate information</li>
+          <li><i class="fa-solid fa-check"></i> Withdraw consent to the use of your personal information</li>
+          <li><i class="fa-solid fa-check"></i> Request deletion of your personal information</li>
+        </ul>
+        <p>To exercise any of these rights, please contact me at <a href="mailto:michealakinmoju@gmail.com">michealakinmoju@gmail.com</a>.</p>
+      </div>
+
+      <div class="policy-card reveal">
+        <h2><i class="fa-solid fa-link"></i> External Links</h2>
+        <p>This Site may contain links to external websites. I am not responsible for the privacy practices or content of those sites. I encourage you to review the privacy policies of any external sites you visit.</p>
+      </div>
+
+      <div class="policy-card reveal">
+        <h2><i class="fa-solid fa-rotate"></i> Changes to This Policy</h2>
+        <p>I may update this Privacy Policy from time to time. Any changes will be posted on this page with an updated date at the top. I encourage you to review this page periodically.</p>
+        <p>Continued use of the Site after any changes constitutes your acceptance of the updated policy.</p>
+      </div>
+
+      <div class="policy-card reveal">
+        <h2><i class="fa-solid fa-envelope"></i> Contact Me</h2>
+        <p>If you have any questions about this Privacy Policy or how I handle your data, please reach out:</p>
+        <ul>
+          <li><i class="fa-solid fa-envelope"></i> <strong style="color:var(--text);">Email:</strong> <a href="mailto:michealakinmoju@gmail.com">michealakinmoju@gmail.com</a></li>
+          <li><i class="fa-brands fa-whatsapp"></i> <strong style="color:var(--text);">WhatsApp:</strong> <a href="https://wa.me/12269793569" target="_blank">226-979-3569</a></li>
+          <li><i class="fa-solid fa-location-dot"></i> <strong style="color:var(--text);">Location:</strong> Ontario, Canada</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand"><h3>Michael Akinmoju</h3><p>Premium web design & development for businesses ready to grow online.</p></div>
+      <div class="footer-col"><h4>Navigation</h4><a href="index.html">Home</a><a href="work.html">Work & Pricing</a><a href="contact.html">Contact</a></div>
+      <div class="footer-col"><h4>Services</h4><a href="work.html">Website Design</a><a href="work.html">Web Development</a><a href="work.html">Landing Pages</a></div>
+      <div class="footer-col"><h4>Legal</h4><a href="privacy.html">Privacy Policy</a><a href="mailto:michealakinmoju@gmail.com">Email</a><a href="https://wa.me/12269793569" target="_blank">WhatsApp</a></div>
+    </div>
+    <div class="footer-bottom">
+      <p id="footerYear"></p>
+      <div class="footer-socials">
+        <a href="https://www.instagram.com/mich4505ael" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://www.tiktok.com/@thisisafri" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
+        <a href="https://wa.me/12269793569" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<a href="https://wa.me/12269793569" target="_blank" class="floating-btn"><i class="fa-brands fa-whatsapp"></i> Chat Now</a>
+
+<script>
+  document.getElementById("footerYear").textContent = "© " + new Date().getFullYear() + " Michael Akinmoju. All rights reserved.";
+
+  const menuToggle = document.getElementById("menuToggle");
+  const mobilePanel = document.getElementById("mobilePanel");
+  menuToggle.addEventListener("click", function() {
+    mobilePanel.classList.toggle("active");
+    document.body.classList.toggle("menu-open");
+  });
+  document.addEventListener("click", function(e) {
+    if(mobilePanel.classList.contains("active") && !mobilePanel.contains(e.target) && !menuToggle.contains(e.target)) {
+      mobilePanel.classList.remove("active");
+      document.body.classList.remove("menu-open");
+    }
+  });
+
+  const reveals = document.querySelectorAll(".reveal");
+  const ro = new IntersectionObserver(function(e) {
+    e.forEach(function(x) { if(x.isIntersecting) x.target.classList.add("show"); });
+  }, { threshold: 0.1 });
+  reveals.forEach(function(el) { ro.observe(el); });
+
+  function initGrid(canvas, dark) {
+    if(!canvas) return;
+    const ctx = canvas.getContext("2d");
+    const isMobile = window.innerWidth < 768;
+    const COUNT = isMobile ? 18 : 45;
+    let W, H, t = 0, P = [];
+    function resize() {
+      const p = canvas.closest(".animated-bg");
+      W = canvas.width = p ? p.offsetWidth : window.innerWidth;
+      H = canvas.height = p ? p.offsetHeight : 400;
+      P = [];
+      for(let i = 0; i < COUNT; i++) P.push({ x: Math.random()*W, y: Math.random()*H, vx: (Math.random()-.5)*(isMobile?.18:.32), vy: (Math.random()-.5)*(isMobile?.18:.32), r: Math.random()*1.4+.6 });
+    }
+    resize();
+    window.addEventListener("resize", resize, { passive: true });
+    const gc = dark ? "rgba(255,255,255," : "rgba(99,102,241,";
+    const gs = isMobile ? 70 : 88;
+    function draw() {
+      ctx.clearRect(0, 0, W, H); t += .007;
+      if(!isMobile) {
+        for(let x = 0; x <= W; x += gs) { const pulse = Math.sin(t+x*.012)*.5+.5; ctx.beginPath(); ctx.moveTo(x,0); ctx.lineTo(x,H); ctx.strokeStyle = gc+(pulse*.055)+")"; ctx.lineWidth = .7; ctx.stroke(); }
+        for(let y = 0; y <= H; y += gs) { const pulse = Math.sin(t+y*.012)*.5+.5; ctx.beginPath(); ctx.moveTo(0,y); ctx.lineTo(W,y); ctx.strokeStyle = gc+(pulse*.055)+")"; ctx.lineWidth = .7; ctx.stroke(); }
+      }
+      P.forEach(function(p, i) {
+        p.x += p.vx; p.y += p.vy;
+        if(p.x < 0 || p.x > W) p.vx *= -1;
+        if(p.y < 0 || p.y > H) p.vy *= -1;
+        ctx.beginPath(); ctx.arc(p.x, p.y, p.r, 0, Math.PI*2); ctx.fillStyle = gc+".45)"; ctx.fill();
+        for(let j = i+1; j < P.length; j++) {
+          const q = P[j], dx = p.x-q.x, dy = p.y-q.y, d = Math.sqrt(dx*dx+dy*dy), mx = isMobile ? 78 : 115;
+          if(d < mx) { ctx.beginPath(); ctx.moveTo(p.x,p.y); ctx.lineTo(q.x,q.y); ctx.strokeStyle = gc+(1-d/mx)*.16+")"; ctx.lineWidth = .65; ctx.stroke(); }
+        }
+      });
+      requestAnimationFrame(draw);
+    }
+    draw();
+  }
+
+  initGrid(document.getElementById("phGrid"), false);
+</script>
+</body>
+</html>
