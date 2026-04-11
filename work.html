@@ -558,7 +558,6 @@ const menuToggle=document.getElementById("menuToggle");
 const mobilePanel=document.getElementById("mobilePanel");
 menuToggle.addEventListener("click",()=>{mobilePanel.classList.toggle("active");document.body.classList.toggle("menu-open");});
 document.addEventListener("click",(e)=>{if(mobilePanel.classList.contains("active")&&!mobilePanel.contains(e.target)&&!menuToggle.contains(e.target)){mobilePanel.classList.remove("active");document.body.classList.remove("menu-open");}});
-const bar=document.getElementById("scrollBar");
 const reveals=document.querySelectorAll(".reveal");
 const ro=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting)x.target.classList.add("show");});},{threshold:.1});
 reveals.forEach(el=>ro.observe(el));
