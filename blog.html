@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>Blog | Michael Akinmoju | Web Design Tips, Guides & Resources</title>
+  <meta name="description" content="Honest guides, tips and resources on web design, small business websites, SEO, landing pages, and getting your business online — written by Michael Akinmoju."/>
+  <meta name="keywords" content="web design blog, small business website tips, affordable web design, web designer Canada, SEO tips, landing page guide"/>
+  <meta name="author" content="Michael Akinmoju"/>
+  <meta name="robots" content="index, follow"/>
+  <link rel="canonical" href="https://michaelakinmoju.com/blog.html"/>
+
+  <meta property="og:type" content="website"/>
+  <meta property="og:title" content="Blog | Michael Akinmoju | Web Design Tips & Guides"/>
+  <meta property="og:description" content="Honest guides on web design, small business websites, SEO and more."/>
+  <meta property="og:image" content="https://michaelakinmoju.com/michael-logo.png"/>
+  <meta property="og:url" content="https://michaelakinmoju.com/blog.html"/>
+  <meta property="og:site_name" content="UnlockWithMichael"/>
+
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="Blog | Michael Akinmoju"/>
+  <meta name="twitter:description" content="Honest guides on web design, SEO and small business websites."/>
+  <meta name="twitter:image" content="https://michaelakinmoju.com/michael-logo.png"/>
+
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9464737251646149"
+     crossorigin="anonymous"></script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    "name": "Michael Akinmoju Blog",
+    "url": "https://michaelakinmoju.com/blog.html",
+    "description": "Honest guides and tips on web design, small business websites, SEO, landing pages and more.",
+    "author": {
+      "@type": "Person",
+      "name": "Michael Akinmoju",
+      "url": "https://michaelakinmoju.com/about.html"
+    }
+  }
+  </script>
+
+  <link rel="icon" type="image/png" href="favicon.png"/>
+  <link rel="apple-touch-icon" href="favicon.png"/>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Cormorant+Garamond:wght@600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
+  <style>
+    :root{--bg:#0a0a0b;--bg-2:#111113;--bg-3:#1a1a1d;--bg-card:#141416;--text:#f0f0f2;--muted:#8a8a8e;--line:rgba(255,255,255,0.07);--line-strong:rgba(255,255,255,0.13);--accent:#6366f1;--accent2:#0ea5e9;--shadow:0 18px 40px rgba(0,0,0,0.3);--shadow-strong:0 24px 46px rgba(0,0,0,0.5);--radius:20px;--max:1180px;--nav-h:80px;}
+    *{box-sizing:border-box;margin:0;padding:0;}
+    html{scroll-behavior:smooth;}
+    body{font-family:"Outfit",sans-serif;background:var(--bg);color:var(--text);overflow-x:hidden;}
+    body.menu-open{overflow:hidden;}
+    img{max-width:100%;display:block;}
+    a{color:inherit;text-decoration:none;}
+    h1,h2,h3,h4{font-family:"Cormorant Garamond",serif;line-height:1.1;}
+    p{color:var(--muted);line-height:1.75;}
+    .container{width:min(100% - 40px,var(--max));margin:auto;}
+    .holo-lines{position:fixed;inset:0;z-index:1;pointer-events:none;background:repeating-linear-gradient(0deg,transparent,transparent 3px,rgba(99,102,241,0.012) 3px,rgba(99,102,241,0.012) 4px);animation:scanDown 12s linear infinite;}
+    @keyframes scanDown{0%{background-position:0 0}100%{background-position:0 80px}}
+    .tech-grid{position:fixed;inset:0;z-index:1;pointer-events:none;background-image:linear-gradient(rgba(99,102,241,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(99,102,241,0.03) 1px,transparent 1px);background-size:72px 72px;opacity:.6;}
+    .vignette{position:fixed;inset:0;z-index:1;pointer-events:none;background:radial-gradient(ellipse at center,transparent 30%,rgba(10,10,11,0.8) 100%);}
+    nav,.page-hero,.section,footer,.floating-btn{position:relative;z-index:2;}
+    nav{position:fixed;top:0;left:0;width:100%;z-index:1000;background:rgba(10,10,11,0.85);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border-bottom:1px solid var(--line);}
+    .nav-wrap{min-height:var(--nav-h);display:flex;align-items:center;justify-content:space-between;gap:20px;}
+    .brand{display:flex;align-items:center;gap:13px;z-index:1101;}
+    .brand-mark{width:60px;height:70px;border-radius:14px;display:grid;place-items:center;background:transparent;flex-shrink:0;overflow:hidden;}
+    .brand-mark img{width:100%;height:100%;object-fit:contain;}
+    .brand-text{display:flex;flex-direction:column;line-height:1;}
+    .brand-name{font-family:"Cormorant Garamond",serif;font-size:clamp(1.1rem,1.6vw,1.6rem);letter-spacing:.07em;text-transform:uppercase;color:var(--text);}
+    .brand-sub{margin-top:5px;font-size:.66rem;color:var(--muted);text-transform:uppercase;letter-spacing:.16em;font-weight:700;}
+    .nav-center{display:flex;gap:4px;}
+    .nav-center a{font-weight:700;font-size:.88rem;color:var(--muted);padding:8px 15px;border-radius:999px;transition:.18s ease;}
+    .nav-center a:hover,.nav-center a.active{background:var(--bg-3);color:var(--text);}
+    .nav-right{display:flex;align-items:center;gap:10px;}
+    .nav-socials{display:flex;gap:8px;}
+    .nav-socials a{width:36px;height:36px;display:grid;place-items:center;border-radius:50%;background:var(--bg-2);border:1px solid var(--line);font-size:.88rem;color:var(--muted);}
+    .nav-socials a:hover{background:var(--bg-3);color:var(--text);}
+    .nav-cta{display:inline-flex;align-items:center;gap:8px;padding:10px 18px;border-radius:999px;font-weight:800;font-size:.86rem;background:linear-gradient(135deg,#6366f1,#0ea5e9);color:#fff;transition:.18s ease;}
+    .nav-cta:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(99,102,241,.3);}
+    .menu-toggle{display:none;width:42px;height:42px;border:none;border-radius:11px;background:var(--bg-2);border:1px solid var(--line);color:var(--text);cursor:pointer;z-index:1101;place-items:center;}
+    .mobile-panel{display:none;position:fixed;top:0;right:-100%;width:min(86vw,340px);height:100vh;background:var(--bg);border-left:1px solid var(--line);z-index:1100;padding:90px 24px 30px;flex-direction:column;gap:22px;box-shadow:-8px 0 28px rgba(0,0,0,.3);transition:right .28s ease;overflow-y:auto;}
+    .mobile-panel.active{right:0;}
+    .mobile-links{display:flex;flex-direction:column;}
+    .mobile-links a{font-weight:800;font-size:1rem;color:var(--text);padding:14px 0;border-bottom:1px solid var(--line);}
+    .mobile-socials{display:flex;gap:10px;flex-wrap:wrap;}
+    .mobile-socials a{width:40px;height:40px;display:grid;place-items:center;border-radius:50%;background:var(--bg-2);border:1px solid var(--line);color:var(--muted);}
+
+    .page-hero{padding:calc(var(--nav-h) + 72px) 0 60px;text-align:center;}
+    .page-hero-eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.05);border:1px solid var(--line);padding:6px 14px;border-radius:999px;font-size:.73rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:22px;}
+    .page-hero h1{font-size:clamp(2.6rem,5vw,4.4rem);color:var(--text);margin-bottom:18px;}
+    .page-hero h1 em{font-style:italic;color:#6366f1;}
+    .page-hero p{font-size:1.05rem;max-width:620px;margin:0 auto;}
+
+    .posts-section{padding:40px 0 96px;}
+    .posts-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:26px;}
+    .post-card{background:var(--bg-card);border:1px solid var(--line);border-radius:var(--radius);padding:32px 30px;box-shadow:var(--shadow);transition:.22s ease;display:flex;flex-direction:column;gap:14px;height:100%;}
+    .post-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-strong);border-color:rgba(99,102,241,.25);}
+    .post-tag{display:inline-flex;align-items:center;gap:6px;padding:5px 11px;border-radius:999px;background:rgba(99,102,241,.1);border:1px solid rgba(99,102,241,.2);font-size:.7rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#a5b4fc;width:fit-content;}
+    .post-card h2{font-size:clamp(1.4rem,2.2vw,1.85rem);color:var(--text);line-height:1.15;}
+    .post-card p{font-size:.94rem;color:var(--muted);}
+    .post-meta{display:flex;align-items:center;gap:16px;font-size:.78rem;color:var(--muted);margin-top:auto;padding-top:12px;border-top:1px solid var(--line);}
+    .post-meta span{display:inline-flex;align-items:center;gap:6px;}
+    .post-card .read-more{display:inline-flex;align-items:center;gap:7px;font-size:.88rem;font-weight:800;color:#6366f1;margin-top:4px;transition:.18s;}
+    .post-card:hover .read-more{gap:11px;color:#818cf8;}
+
+    .cta-band{position:relative;overflow:hidden;background:linear-gradient(135deg,#111113,#1a1a2e);padding:80px 0;text-align:center;border-top:1px solid var(--line);}
+    .cta-band h2{font-size:clamp(1.8rem,3.6vw,2.8rem);color:#fff;margin-bottom:14px;}
+    .cta-band p{color:rgba(255,255,255,.55);font-size:1rem;max-width:500px;margin:0 auto 28px;}
+    .cta-band-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:13px 22px;border-radius:999px;font-weight:800;border:none;cursor:pointer;transition:.18s ease;font-size:.9rem;font-family:"Outfit",sans-serif;}
+    .btn-dark{background:var(--text);color:var(--bg);}
+    .btn-dark:hover{background:#fff;transform:translateY(-2px);}
+    .btn-ghost{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.15);}
+    .btn-ghost:hover{background:rgba(255,255,255,.06);transform:translateY(-2px);}
+
+    footer{background:var(--bg-2);border-top:1px solid var(--line);padding:52px 0 32px;}
+    .footer-inner{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:36px;margin-bottom:44px;}
+    .footer-brand h3{font-size:1.45rem;margin-bottom:10px;color:var(--text);}
+    .footer-brand p{font-size:.86rem;max-width:230px;}
+    .footer-col h4{font-size:.74rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:14px;}
+    .footer-col a{display:block;font-size:.88rem;color:var(--muted);margin-bottom:10px;transition:.14s;}
+    .footer-col a:hover{color:var(--text);}
+    .footer-bottom{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;border-top:1px solid var(--line);padding-top:22px;}
+    .footer-bottom p{font-size:.8rem;color:var(--muted);}
+    .footer-socials{display:flex;gap:9px;}
+    .footer-socials a{width:34px;height:34px;display:grid;place-items:center;border-radius:50%;background:var(--bg-3);border:1px solid var(--line);font-size:.8rem;color:var(--muted);}
+    .footer-socials a:hover{background:rgba(99,102,241,.15);color:#6366f1;}
+    .floating-btn{position:fixed;right:20px;bottom:20px;z-index:999;display:inline-flex;align-items:center;gap:9px;padding:13px 20px;border-radius:999px;background:linear-gradient(135deg,#6366f1,#0ea5e9);color:#fff;font-weight:800;font-size:.86rem;box-shadow:0 12px 28px rgba(99,102,241,.4);transition:.18s ease;}
+    .floating-btn:hover{transform:translateY(-2px);}
+    .reveal{opacity:0;transform:translateY(22px);transition:opacity .65s ease,transform .65s ease;}
+    .reveal.show{opacity:1;transform:translateY(0);}
+
+    @media(max-width:1060px){.footer-inner{grid-template-columns:1fr 1fr;}}
+    @media(max-width:860px){.nav-center,.nav-right .nav-socials,.nav-cta{display:none;}.menu-toggle{display:grid;}.mobile-panel{display:flex;}.posts-grid{grid-template-columns:1fr;}.cta-band-btns{flex-direction:column;}.btn{width:100%;}}
+  </style>
+</head>
+<body>
+
+<div class="holo-lines"></div>
+<div class="tech-grid"></div>
+<div class="vignette"></div>
+
+<nav>
+  <div class="container nav-wrap">
+    <a href="index.html" class="brand">
+      <div class="brand-mark"><img src="michael-logo.png" alt="Michael Akinmoju Logo"></div>
+      <div class="brand-text">
+        <div class="brand-name">Michael Akinmoju</div>
+        <div class="brand-sub">Unlockwithmichael</div>
+      </div>
+    </a>
+    <div class="nav-center">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="work.html">Work & Pricing</a>
+      <a href="blog.html" class="active">Blog</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="nav-right">
+      <div class="nav-socials">
+        <a href="https://www.instagram.com/mich4505ael" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://www.tiktok.com/@thisisafri" target="_blank" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+        <a href="https://wa.me/12269793569" target="_blank" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+      </div>
+      <a href="contact.html" class="nav-cta"><i class="fa-solid fa-paper-plane"></i> Start a Project</a>
+    </div>
+    <button class="menu-toggle" id="menuToggle" aria-label="Menu"><i class="fa-solid fa-bars"></i></button>
+  </div>
+</nav>
+
+<aside class="mobile-panel" id="mobilePanel">
+  <div class="mobile-links">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="work.html">Work & Pricing</a>
+    <a href="blog.html">Blog</a>
+    <a href="contact.html">Contact</a>
+  </div>
+  <div class="mobile-socials">
+    <a href="https://www.instagram.com/mich4505ael" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+    <a href="https://www.tiktok.com/@thisisafri" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
+    <a href="https://wa.me/12269793569" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+  </div>
+  <a href="contact.html" class="btn btn-dark" style="width:100%;justify-content:center;margin-top:8px;"><i class="fa-solid fa-paper-plane"></i> Start a Project</a>
+</aside>
+
+<section class="page-hero">
+  <div class="container">
+    <div class="reveal">
+      <div class="page-hero-eyebrow"><i class="fa-solid fa-newspaper"></i> The UnlockWithMichael Blog</div>
+      <h1>Honest guides on <em>web design</em><br>& growing online.</h1>
+      <p>Real advice from someone who builds websites for a living — no fluff, no jargon, no upsells. Just the information you actually need to make smart decisions for your business online.</p>
+    </div>
+  </div>
+</section>
+
+<section class="posts-section">
+  <div class="container">
+    <div class="posts-grid">
+
+      <a href="blog/why-your-website-isnt-bringing-customers.html" class="post-card reveal">
+        <span class="post-tag"><i class="fa-solid fa-chart-line"></i> Conversion</span>
+        <h2>Why Your Small Business Website Isn't Bringing in Customers (And How to Fix It)</h2>
+        <p>You spent money on a website. It looks fine. So why is your inbox empty? Here are the 6 real reasons small business websites don't convert — and exactly what to change.</p>
+        <div class="post-meta">
+          <span><i class="fa-regular fa-calendar"></i> April 20, 2026</span>
+          <span><i class="fa-regular fa-clock"></i> 7 min read</span>
+        </div>
+        <span class="read-more">Read article <i class="fa-solid fa-arrow-right"></i></span>
+      </a>
+
+      <a href="blog/how-much-should-a-small-business-website-cost.html" class="post-card reveal">
+        <span class="post-tag"><i class="fa-solid fa-dollar-sign"></i> Pricing</span>
+        <h2>How Much Should a Small Business Website Cost in 2026? An Honest Breakdown</h2>
+        <p>Quotes range from $0 to $20,000+ for what sounds like the same thing. Here's a straight breakdown of what you actually get at each price point — and what's right for your business.</p>
+        <div class="post-meta">
+          <span><i class="fa-regular fa-calendar"></i> April 19, 2026</span>
+          <span><i class="fa-regular fa-clock"></i> 8 min read</span>
+        </div>
+        <span class="read-more">Read article <i class="fa-solid fa-arrow-right"></i></span>
+      </a>
+
+      <a href="blog/7-signs-your-website-looks-outdated.html" class="post-card reveal">
+        <span class="post-tag"><i class="fa-solid fa-triangle-exclamation"></i> Redesign</span>
+        <h2>7 Signs Your Website Looks Outdated (And It's Costing You Clients)</h2>
+        <p>A dated website kills trust before a visitor even reads your offer. Here are 7 visual and technical red flags that tell people your business is stuck in the past — plus how to fix each one.</p>
+        <div class="post-meta">
+          <span><i class="fa-regular fa-calendar"></i> April 17, 2026</span>
+          <span><i class="fa-regular fa-clock"></i> 6 min read</span>
+        </div>
+        <span class="read-more">Read article <i class="fa-solid fa-arrow-right"></i></span>
+      </a>
+
+      <a href="blog/custom-website-vs-website-builder.html" class="post-card reveal">
+        <span class="post-tag"><i class="fa-solid fa-code-compare"></i> Comparison</span>
+        <h2>Custom Website vs. Website Builder (Wix, Squarespace): Which Is Right for Your Business?</h2>
+        <p>Wix promises a website in minutes. A developer quotes you thousands. Which one actually serves your business long-term? Here's the honest comparison based on cost, control, SEO and growth.</p>
+        <div class="post-meta">
+          <span><i class="fa-regular fa-calendar"></i> April 15, 2026</span>
+          <span><i class="fa-regular fa-clock"></i> 8 min read</span>
+        </div>
+        <span class="read-more">Read article <i class="fa-solid fa-arrow-right"></i></span>
+      </a>
+
+      <a href="blog/local-business-website-canada-google-ranking.html" class="post-card reveal">
+        <span class="post-tag"><i class="fa-solid fa-location-dot"></i> Local SEO</span>
+        <h2>5 Things Every Local Business Website in Canada Needs to Rank on Google</h2>
+        <p>If you're running a business in Ontario, BC, Alberta or anywhere in Canada, ranking locally isn't about fancy SEO tricks. It's about 5 fundamentals most sites completely miss. Here they are.</p>
+        <div class="post-meta">
+          <span><i class="fa-regular fa-calendar"></i> April 12, 2026</span>
+          <span><i class="fa-regular fa-clock"></i> 7 min read</span>
+        </div>
+        <span class="read-more">Read article <i class="fa-solid fa-arrow-right"></i></span>
+      </a>
+
+      <a href="blog/landing-pages-vs-full-websites.html" class="post-card reveal">
+        <span class="post-tag"><i class="fa-solid fa-bullseye"></i> Strategy</span>
+        <h2>Landing Pages vs. Full Websites: When You Need Each (With Real Examples)</h2>
+        <p>A landing page and a full website solve different problems. Using the wrong one wastes money and leaves sales on the table. Here's when you need each — and when you need both.</p>
+        <div class="post-meta">
+          <span><i class="fa-regular fa-calendar"></i> April 10, 2026</span>
+          <span><i class="fa-regular fa-clock"></i> 6 min read</span>
+        </div>
+        <span class="read-more">Read article <i class="fa-solid fa-arrow-right"></i></span>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="container">
+    <div class="reveal">
+      <h2>Ready to build a site that actually works?</h2>
+      <p>Free consultation included — no pressure, no obligation. Let's talk about your business.</p>
+      <div class="cta-band-btns">
+        <a href="contact.html" class="btn btn-dark"><i class="fa-solid fa-paper-plane"></i> Start a Project</a>
+        <a href="work.html" class="btn btn-ghost"><i class="fa-solid fa-arrow-right"></i> See My Work</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <h3>Michael Akinmoju</h3>
+        <p>Premium web design & development for businesses ready to grow online.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="work.html">Work & Pricing</a>
+        <a href="blog.html">Blog</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <a href="work.html">Website Design</a>
+        <a href="work.html">Web Development</a>
+        <a href="work.html">Landing Pages</a>
+      </div>
+      <div class="footer-col"><h4>Legal</h4><a href="privacy.html">Privacy Policy</a></div>
+      <div class="footer-col">
+        <h4>Connect</h4>
+        <a href="mailto:michealakinmoju@gmail.com">Email</a>
+        <a href="https://wa.me/12269793569" target="_blank">WhatsApp</a>
+        <a href="https://www.instagram.com/mich4505ael" target="_blank">Instagram</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p id="footerYear"></p>
+      <div class="footer-socials">
+        <a href="https://www.instagram.com/mich4505ael" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://www.tiktok.com/@thisisafri" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
+        <a href="https://wa.me/12269793569" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<a href="contact.html" class="floating-btn"><i class="fa-solid fa-paper-plane"></i> Hire Me</a>
+
+<script>
+document.getElementById("footerYear").textContent=`© ${new Date().getFullYear()} Michael Akinmoju. All rights reserved.`;
+const menuToggle=document.getElementById("menuToggle");
+const mobilePanel=document.getElementById("mobilePanel");
+menuToggle.addEventListener("click",()=>{mobilePanel.classList.toggle("active");document.body.classList.toggle("menu-open");});
+document.addEventListener("click",(e)=>{if(mobilePanel.classList.contains("active")&&!mobilePanel.contains(e.target)&&!menuToggle.contains(e.target)){mobilePanel.classList.remove("active");document.body.classList.remove("menu-open");}});
+const reveals=document.querySelectorAll(".reveal");
+const ro=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting)x.target.classList.add("show");});},{threshold:.1});
+reveals.forEach(el=>ro.observe(el));
+</script>
+</body>
+</html>
