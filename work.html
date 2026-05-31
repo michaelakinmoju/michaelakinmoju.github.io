@@ -198,6 +198,7 @@
     .section-head p{font-size:.96rem;max-width:500px;}
 
     .projects-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;position:relative;z-index:1;perspective:1200px;perspective-origin:50% 40%;}
+    .projects-grid--two{grid-template-columns:repeat(2,1fr);max-width:776px;margin-left:auto;margin-right:auto;}
     .proj-card{position:relative;border-radius:var(--radius);--rx:0deg;--ry:var(--rest-ry,0deg);--mx:50%;--my:50%;transform:rotateX(var(--rx)) rotateY(var(--ry));transform-style:preserve-3d;will-change:transform;transition:transform .6s cubic-bezier(.23,1,.32,1),box-shadow .6s cubic-bezier(.23,1,.32,1);box-shadow:0 20px 60px rgba(0,0,0,.55),0 8px 20px rgba(99,102,241,.08);cursor:pointer;display:block;}
     .proj-card.tilt-reset{transition:transform .6s cubic-bezier(.23,1,.32,1),box-shadow .6s cubic-bezier(.23,1,.32,1);}
     .proj-card:hover{box-shadow:0 30px 80px rgba(0,0,0,.65),0 0 0 1px rgba(99,102,241,.55),0 0 28px 6px rgba(99,102,241,.18),0 0 56px 14px rgba(14,165,233,.10);}
@@ -359,7 +360,7 @@
       <h2>Projects I've built</h2>
       <p>A selection of live websites and design concepts crafted for businesses and brands.</p>
     </div>
-    <div class="projects-grid">
+    <div class="projects-grid projects-grid--two">
       <article class="proj-card reveal" data-tilt-rest="-3">
         <div class="proj-card-inner">
           <div class="proj-thumb">
@@ -388,22 +389,6 @@
             <p>A clean, conversion-focused website for a Nigerian home services brand — built to attract bookings and build trust at first glance.</p>
             <div class="proj-tags"><span class="tag">Business Landing Page</span><span class="tag">Client Project</span></div>
             <a href="https://beneeasy.pages.dev" target="_blank" class="btn btn-grad"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live Preview</a>
-          </div>
-          <div class="proj-glare" aria-hidden="true"></div>
-        </div>
-      </article>
-      <article class="proj-card reveal" data-tilt-rest="3">
-        <div class="proj-card-inner">
-          <div class="proj-thumb">
-            <img src="portfolio-concept.png" alt="Portfolio Concept">
-            <div class="proj-thumb-overlay"><i class="fa-solid fa-arrow-up-right-from-square"></i></div>
-          </div>
-          <div class="proj-cover-body">
-            <span class="proj-index">03</span>
-            <h3>Portfolio Concept</h3>
-            <p>Clean, minimal portfolio concept for a creative professional personal brand.</p>
-            <div class="proj-tags"><span class="tag">Portfolio</span><span class="tag">Creative</span></div>
-            <a href="https://barbershop-eu3.pages.dev" target="_blank" class="btn btn-grad"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live Preview</a>
           </div>
           <div class="proj-glare" aria-hidden="true"></div>
         </div>
